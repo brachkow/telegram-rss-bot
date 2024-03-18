@@ -1,0 +1,31 @@
+{
+  "name": "telegram-rss-bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "docker compose up -d; tsx src/index.ts",
+    "build": "node esbuild.mjs",
+    "start": "node dist/index.js"
+  },
+  "volta": {
+    "node": "20.11.1"
+  },
+  "dependencies": {
+    "@telegraf/entity": "^0.5.0",
+    "@types/lodash-es": "^4.17.12",
+    "dotenv": "^16.4.5",
+    "lodash-es": "^4.17.21",
+    "md5": "^2.3.0",
+    "openai": "^4.29.1",
+    "redis": "^4.6.13",
+    "rss-feed-emitter": "^3.2.3",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/md5": "^2.3.5",
+    "@types/node": "^20.11.28",
+    "esbuild": "^0.20.2",
+    "eslint": "^8.57.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  }
+}
