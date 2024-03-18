@@ -12,7 +12,14 @@ export interface Item {
 }
 
 const main = async () => {
-  const redis = createClient();
+  const redis = createClient({
+    username: process.env.REDISUSER,
+    password: process.env.REDIS_PASSWORD,
+    socket: {
+      host: process.env.REDISHOST,
+      port: parseInt(process.env.REDISPORT, 10),
+    },
+  });
   await redis.connect();
 
   const bot = new Telegraf(process.env.BOT_TOKEN);
